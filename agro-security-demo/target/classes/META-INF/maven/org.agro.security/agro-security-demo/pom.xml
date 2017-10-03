@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>agro-security-demo</artifactId>
+  <parent>
+  	<groupId>org.agro.security</groupId>
+  	<artifactId>agro-security</artifactId>
+  	<version>1.0.0-SNAPSHOT</version>
+  	<relativePath>../agro-security</relativePath>
+  </parent>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>org.agro.security</groupId>
+		<artifactId>agro-security-browser</artifactId>
+		<version>${agro.security.version}</version>
+	</dependency>
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+     </dependency>
+  </dependencies>
+  
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+			    <artifactId>spring-boot-maven-plugin</artifactId>
+			    <version>1.5.7.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<finalName>demo</finalName>
+	</build>
+</project>
