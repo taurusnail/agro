@@ -5,6 +5,9 @@ package org.agro.dto;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+
+import org.agro.validator.MyConstraint;
 import org.hibernate.validator.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -21,13 +24,16 @@ public class User {
 	
 	private String id;
 	
+	@MyConstraint(message = "这是个测试，哈哈！")
 	private String username;
 	
-	@NotBlank
+	@NotBlank(message = "密码不能为空！")
 	private String password;
 	
+	@Past(message = "生日必须是过去时间！")
 	private Date birthday;
 
+	@JsonView(UserSimpleView.class)
 	public String getId() {
 		return id;
 	}
@@ -35,7 +41,8 @@ public class User {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	
+	@JsonView(UserSimpleView.class)
 	public Date getBirthday() {
 		return birthday;
 	}

@@ -3,16 +3,21 @@
  */
 package org.agro.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * @author gaoxiang
  *
  */
 public class UserQueryCondition {
 	
+	@ApiModelProperty("用户名")
 	private String username;
 	
+	@ApiModelProperty("年龄（年龄起始值）")
 	private int age;
 	
+	@ApiModelProperty("年龄（年龄结束值）")
 	private int ageTo;
 
 	public String getUsername() {
